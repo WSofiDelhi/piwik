@@ -356,7 +356,7 @@ table.dataTable {
     thead {
         tr {
             th {
-                background: @color-silver-l99;
+                background: @color-silver-l98;
                 text-transform: uppercase;
                 color: @theme-color-text;
                 .font-default(10px, 12px);
@@ -381,7 +381,12 @@ table.dataTable {
                 }
 
                 &.columnSorted {
-                    background:  @color-silver-l99 !important;
+
+                    &.first {
+                      padding-left: 20px;
+                    }
+
+                    background:  @color-silver-l98 !important;
                     .sortIcon {
                         display: inline;
                         position: relative;
@@ -392,7 +397,7 @@ table.dataTable {
                       float: none;
                       position: absolute;
                       margin-top: -1px;
-                      margin-left: -15px;
+                      margin-left: -13px;
 
                       &.sortIconContainerAsc {
                         margin-top: -6px;
