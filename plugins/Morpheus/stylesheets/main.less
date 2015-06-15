@@ -373,7 +373,7 @@ table.dataTable {
 
                 &.sortable.first + .sortable {
                   // first column after label should have a bit less padding
-                  padding-left: 10px;
+                  padding-left: 13px;
                 }
               
                 #thDIV {
@@ -423,10 +423,10 @@ table.dataTable {
         }
     }
     tr {
-        border-bottom: 1px solid @color-silver-l95 !important;
 
         td {
-            border-color: @color-silver-l85 !important;
+            border-bottom: 1px solid @color-silver-l95 !important;
+            border-color: @color-silver-l95 !important;
             color: @theme-color-text;
             background: @theme-color-background-base;
 
@@ -444,11 +444,6 @@ table.dataTable {
 
             &:first-child {
                 border-left: 0px;
-            }
-
-            &.labelodd,
-            &.columnodd {
-                background-color: @theme-color-background-base !important;
             }
 
             &.label + td.column {
@@ -485,13 +480,15 @@ table.dataTable {
         }
 
       &:hover {
-        td {
-          &.labeleven,
-          &.columneven,
-          &.labelodd,
-          &.columnodd {
-            background-color: @color-silver-l95 !important;
-          }
+        td:not(.cellSubDataTable) {
+          background-color: @color-silver-l95;
+        }
+
+        .cellSubDataTable td {
+          background: @theme-color-background-base;
+        }
+        .cellSubDataTable tr:hover td {
+          background-color: @color-silver-l95;
         }
       }
     }
@@ -534,7 +531,7 @@ div.dataTableVizHtmlTable:not(.dataTableActions), div.dataTableVizAllColumns {
 }
 
 table.dataTable .dataTableRowActions {
-  margin-top: -8px;
+  margin-top: -7px;
 }
 
 .visitsLiveFooter {
