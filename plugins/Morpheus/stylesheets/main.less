@@ -356,21 +356,47 @@ table.dataTable {
     thead {
         tr {
             th {
-                background: @theme-color-background-base;
+                background: @color-silver-l99;
                 text-transform: uppercase;
                 color: @theme-color-text;
                 .font-default(10px, 12px);
                 padding-top: 12px;
                 padding-bottom: 12px;
                 border-bottom: 1px solid @color-silver-l85;
+                vertical-align: middle;
+
+                &.sortable:not(.first) {
+                  text-align: right;
+                  padding-left: 28px;
+                  padding-right: 12px;
+                }
+
+                &.sortable.first + .sortable {
+                  // first column after label should have a bit less padding
+                  padding-left: 10px;
+                }
+              
+                #thDIV {
+                 display: inline; 
+                }
+
                 &.columnSorted {
-                    background:  @theme-color-background-base !important;
+                    background:  @color-silver-l99 !important;
                     .sortIcon {
-                        margin-top: -1px;
+                        display: inline;
+                        position: relative;
                     }
 
-                    .sortIconContainerAsc .sortIcon {
-                      margin-top: -6px;
+                    .sortIconContainer {
+                      display: inline;
+                      float: none;
+                      position: absolute;
+                      margin-top: -1px;
+                      margin-left: -15px;
+
+                      &.sortIconContainerAsc {
+                        margin-top: -6px;
+                      }
                     }
 
                     .sortIconContainer.sortSubtable {
@@ -397,10 +423,12 @@ table.dataTable {
         }
     }
     tr {
+        border-bottom: 1px solid @color-silver-l95 !important;
+
         td {
             border-color: @color-silver-l85 !important;
             color: @theme-color-text;
-            background: @color-silver-l95;
+            background: @theme-color-background-base;
 
             &:not(.value) {
               .font-default(13px, 16px);
@@ -420,7 +448,19 @@ table.dataTable {
 
             &.labelodd,
             &.columnodd {
-                background-color: @color-silver-l95 !important;
+                background-color: @theme-color-background-base !important;
+            }
+
+            &.label + td.column {
+              // first column after label should have a bit less padding
+              padding-left: 10px;
+            }
+
+            &.columneven:not(.labeleven),
+            &.columnodd:not(.labelodd) {
+              padding-left: 28px;
+              padding-right: 12px;
+              text-align: right;
             }
 
             a {
@@ -443,15 +483,17 @@ table.dataTable {
               display: inline-block;
             }
         }
-        & td.columneven,
-        & td.labeleven,
-        &:hover > td.labeleven,
-        &:hover > td.columneven,
-        &.subDataTable:hover > td.labeleven,
-        &.subDataTable:hover > td.columneven,
-        td.cellSubDataTable {
-          background-color: @theme-color-background-base !important;
+
+      &:hover {
+        td {
+          &.labeleven,
+          &.columneven,
+          &.labelodd,
+          &.columnodd {
+            background-color: @color-silver-l95 !important;
+          }
         }
+      }
     }
 
     &.entityTable tr {
@@ -489,10 +531,6 @@ div.dataTableVizHtmlTable:not(.dataTableActions), div.dataTableVizAllColumns {
   tr.subDataTable.expanded > td:first-child:before {
     background-image: url(plugins/Morpheus/images/minus.png);
   }
-}
-
-table.dataTable tr.subDataTable:hover > td, table.dataTable tr.subDataTable:hover > td .dataTableRowActions {
-    background-color: #d9d9d9;
 }
 
 table.dataTable .dataTableRowActions {

@@ -190,26 +190,48 @@ ol.visitorLog p {
     padding:0;
 }
 
-.dataTableVizVisitorLog table.dataTable .column {
-  white-space: normal;
-  padding: 12px 5px;
-}
-.dataTableVizVisitorLog table.dataTable .label {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+#content .dataTableVizVisitorLog {
+  table.dataTable  {
 
-.dataTableVizVisitorLog .dataTableWrapper {
-    width:100%;
+    .label {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    tr {
+      .column {
+        white-space: normal;
+        padding: 12px 5px;
+      }
+
+      .column, .label {
+        text-align: left !important;
+      }
+    }
+
+    thead tr th.sortable:not(.first) {
+      padding-left: 5px;
+    }
+
+  }
+
+  .dataTableWrapper {
+     width:100%;
+  }
+
+  tr {
+
+    &:hover .visitor-log-visitor-profile-link {
+      display:inline;
+    }
+  }
 }
 
 .visitor-log-page-list {
     position:relative;
 }
-.dataTableVizVisitorLog tr:hover .visitor-log-visitor-profile-link {
-    display:inline;
-}
+
 a.visitor-log-visitor-profile-link {
     position:absolute;
     display:none;
