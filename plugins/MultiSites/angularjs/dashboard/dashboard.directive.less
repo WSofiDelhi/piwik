@@ -30,10 +30,14 @@
     border: 0 !important;
   }
 
+  .multisites-column {
+    text-align: right;
+  }
+
   td, tr, .sparkline {
     text-align: center;
     vertical-align: middle;
-    padding: 1px;
+    padding: 3px 6px 3px 12px;
     margin: 0;
   }
 
@@ -48,6 +52,7 @@
   .paging {
     padding: 5px;
     font-size: 10px;
+    border-bottom: 0px !important;
 
     .previous {
       padding-right: 20px;
@@ -68,7 +73,7 @@
   th {
     cursor: pointer;
     border-left: 0px;
-    text-align: center;
+    text-align: right;
     border-bottom: 0px;
 
     &.columnSorted {
@@ -96,14 +101,6 @@
     margin-right: 0px;
   }
 
-  tr.columnodd:hover td, tr.columnodd td {
-    background: #F2F2F2 !important;
-  }
-
-  tr:hover td {
-    background: @theme-color-background-base !important;
-  }
-
   tr.group {
     font-weight: bold;
     height: 30px;
@@ -112,7 +109,6 @@
     padding-left: 50px;
   }
   td.multisites-label {
-    padding-left: 15px;
     text-align: left;
     width: 250px;
   }
