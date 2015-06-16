@@ -365,13 +365,13 @@ table.dataTable {
                 border-bottom: 1px solid @color-silver-l85;
                 vertical-align: middle;
 
-                &.sortable:not(.first) {
+                &:not(.first) {
                   text-align: right;
                   padding-left: 28px;
                   padding-right: 12px;
                 }
 
-                &.sortable.first + .sortable {
+                &.first + th {
                   // first column after label should have a bit less padding
                   padding-left: 13px;
                 }
