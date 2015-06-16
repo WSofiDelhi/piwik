@@ -61,7 +61,7 @@ class PageSpeedCheck implements Diagnostic
                 $getExtendedInfo = true
             );
         } catch(\Exception $e) {
-            $this->logger->info('Unable to test if mod_pagespeed is enabled: the request to {url} failed', array(
+            $this->logger->info('Unable to test if mod_pagespeed is enabled: the request to {url} failed' . $e->getMessage(), array(
                 'url' => $url,
             ));
             // If the test failed, we assume Page speed is not enabled

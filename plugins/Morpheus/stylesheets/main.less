@@ -454,8 +454,11 @@ table.dataTable {
               padding-left: 10px;
             }
 
-            &.columneven:not(.labeleven),
-            &.columnodd:not(.labelodd) {
+            &.label .label {
+              text-align: left;
+            }
+
+            &.column:not(.label) {
               padding-left: 28px;
               padding-right: 12px;
               text-align: right;

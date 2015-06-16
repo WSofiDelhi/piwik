@@ -75,11 +75,17 @@ table.admin  tbody td:hover, table.admin  tbody th:hover {
 }
 
 .admin h2 {
-    border-bottom: 1px solid #DADADA;
-    margin: 15px -15px 20px 0;
+    border-bottom: 0px;
+    margin: 45px -15px 11px 0;
     padding: 0 0 5px 0;
     font-size: 24px;
     width:100%;
+
+  &:first-of-type:not(.secondary) {
+    margin-top: 17px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #DADADA;
+  }
 }
 
 .admin p, .admin section {

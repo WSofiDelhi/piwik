@@ -1408,10 +1408,8 @@ $.extend(DataTable.prototype, UIControl.prototype, {
         // Add some styles on the cells even/odd
         // label (first column of a data row) or not
         $("th:first-child", domElem).addClass('label');
-        $("td:first-child:odd", domElem).addClass('label labeleven');
-        $("td:first-child:even", domElem).addClass('label labelodd');
-        $("tr:odd td", domElem).slice(1).addClass('column columnodd');
-        $("tr:even td", domElem).slice(1).addClass('column columneven');
+        $("td:first-child", domElem).addClass('label');
+        $("tr td", domElem).slice(1).addClass('column');
     },
 
     handleExpandFooter: function (domElem) {
