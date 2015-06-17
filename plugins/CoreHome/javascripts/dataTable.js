@@ -580,7 +580,6 @@ $.extend(DataTable.prototype, UIControl.prototype, {
             var imageSortHeight = 16;
 
             var sortOrder = self.param.filter_sort_order || 'desc';
-            var ImageSortClass = sortOrder.charAt(0).toUpperCase() + sortOrder.substr(1);
 
             // we change the style of the column currently used as sort column
             // adding an image and the class columnSorted to the TD
@@ -588,7 +587,7 @@ $.extend(DataTable.prototype, UIControl.prototype, {
                 return $(this).attr('id') == self.param.filter_sort_column;
             }).addClass('columnSorted');
 
-            var sortIconHtml = '<div class="sortIconContainer sortIconContainer' + ImageSortClass + ' ' + imageSortClassType + '"><span class="sortIcon" width="' + imageSortWidth + '" height="' + imageSortHeight + '" /></div>';
+            var sortIconHtml = '<span class="sortIcon ' + sortOrder + ' ' + imageSortClassType +'" width="' + imageSortWidth + '" height="' + imageSortHeight + '" />';
 
             if (head.hasClass('first') || head.attr('id') == 'label') {
                 head.append(sortIconHtml);
