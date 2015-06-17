@@ -183,39 +183,21 @@ ol.visitorLog p {
 }
 
 .dataTableVizVisitorLog {
-  table.dataTable  {
 
-    .label {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
+  .card {
+    padding: 15px 0px;
+    font-size: 13px;
+  }
 
-    tr {
-      .column {
-        white-space: normal;
-        padding-left: 5px;
-        padding-right: 5px;
-        padding-top: 12px !important;
-        padding-bottom: 12px !important;
-      }
-
-      .column, .label {
-        text-align: left !important;
-      }
-    }
-
-    thead tr th {
-      padding-left: 12px !important;
-    }
-
+  .visitorLog > li > div {
+    width: 95%;
   }
 
   .dataTableWrapper {
      width:100%;
   }
 
-  tr {
+  .card {
 
     &:hover .visitor-log-visitor-profile-link {
       display:inline;
@@ -228,15 +210,17 @@ ol.visitorLog p {
 }
 
 a.visitor-log-visitor-profile-link {
+    z-index: 2;
     position:absolute;
     display:none;
-    right:8px;
-    top:0;
+    right: 15px;
+    top: 15px;
     font-style:italic;
     font-size:13px;
 
     img {
-        margin-top:-2px;
+        margin-top: -2px;
+        margin-bottom: -3px;
     }
 }
 
@@ -291,7 +275,7 @@ span.visitorLogIcons:after {
 .visitorLogIcons .visitorDetails {
     float: left;
     display: block;
-    height: 100px;
+    min-height: 50px;
 }
 
 .visitorLogIcons .visitorType {
