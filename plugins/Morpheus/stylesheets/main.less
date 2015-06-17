@@ -381,10 +381,6 @@ table.dataTable {
 
                 &.columnSorted {
 
-                    &.first {
-                      padding-left: 20px;
-                    }
-
                     .sortIcon {
                         display: inline;
                         position: relative;
@@ -399,6 +395,12 @@ table.dataTable {
 
                       &.sortIconContainerAsc {
                         margin-top: -6px;
+                      }
+                    }
+
+                    &.first {
+                      .sortIconContainer {
+                        margin-left: 5px;
                       }
                     }
 
@@ -521,7 +523,7 @@ div.dataTableVizHtmlTable:not(.dataTableActions), div.dataTableVizAllColumns {
     top: 0;
     width: 12px;
     height: 12px;
-    margin-left:-.5em;
+    margin-left:-1px;
     margin-top:4px;
     margin-right:8px;
     content: '';

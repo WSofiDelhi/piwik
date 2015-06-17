@@ -34,8 +34,13 @@
     border: 0 !important;
   }
 
+  .multisites-evolution,
   .multisites-column {
     text-align: right;
+  }
+
+  .multisites-evolution {
+    width:170px;
   }
 
   td, tr, .sparkline {
@@ -83,6 +88,10 @@
     border-left: 0px;
     text-align: right;
     border-bottom: 0px;
+
+    &#evolution {
+      text-align: center;
+    }
 
     &.columnSorted {
       font-weight: normal !important;
@@ -173,6 +182,10 @@
 
   #evolution_selector {
     margin: -6px 0 0 5px;
+  }
+
+  .label .arrow {
+    margin-left: 2px;
   }
 
   .multisites_asc,

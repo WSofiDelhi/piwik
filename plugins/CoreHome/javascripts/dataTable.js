@@ -584,9 +584,17 @@ $.extend(DataTable.prototype, UIControl.prototype, {
 
             // we change the style of the column currently used as sort column
             // adding an image and the class columnSorted to the TD
-            $('th', domElem).filter(function () { return $(this).attr('id') == self.param.filter_sort_column; })
-                .addClass('columnSorted')
-                .prepend('<div class="sortIconContainer sortIconContainer' + ImageSortClass + ' ' + imageSortClassType + '"><span class="sortIcon" width="' + imageSortWidth + '" height="' + imageSortHeight + '" /></div>');
+            var head = $('th', domElem).filter(function () {
+                return $(this).attr('id') == self.param.filter_sort_column;
+            }).addClass('columnSorted');
+
+            var sortIconHtml = '<div class="sortIconContainer sortIconContainer' + ImageSortClass + ' ' + imageSortClassType + '"><span class="sortIcon" width="' + imageSortWidth + '" height="' + imageSortHeight + '" /></div>';
+
+            if (head.hasClass('first') || head.attr('id') == 'label') {
+                head.append(sortIconHtml);
+            } else {
+                head.prepend(sortIconHtml);
+            }
         }
     },
 
